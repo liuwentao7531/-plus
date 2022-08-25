@@ -78,6 +78,65 @@
 			background: #efefef;
 			color: #1890ff;
 		}
+
+		.up {
+			visibility: hidden;
+			position: fixed;
+			display: flex;
+			/* right: 30px;
+    top: 600px; */
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-end;
+			right: 2rem;
+			bottom: 5rem;
+			z-index: 1000;
+			background-color: #fff;
+		}
+
+		.up:hover {
+			box-shadow: 0 0 2px #71777c;
+		}
+
+		.up::after {
+			content: '\e603';
+			font-size: 16px;
+			font-family: "iconfont";
+			color: #71777c;
+			text-align: center;
+			line-height: 36px;
+		}
+
+		.juejin {
+			position: fixed;
+			display: flex;
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-end;
+			right: 2rem;
+			bottom: 2rem;
+			z-index: 1000;
+			background-color: #fff;
+		}
+
+		.juejin:hover {
+			box-shadow: 0 0 2px #71777c;
+		}
+
+		.juejin::after {
+			content: '\e600';
+			font-size: 16px;
+			font-family: "iconfont";
+			color: #1e80ff;
+			text-align: center;
+			line-height: 36px;
+		}
 	</style>
 </head>
 
@@ -192,8 +251,19 @@
 			</div>
 		</div>
 	</div>
+	<a href="#thetop"><button class="up" id="upbtn"></button></a>
+	<a href="#"><button class="juejin"></button></a>
 </body>
 <script>
+	var upbtn = document.querySelector('.up');
+	document.addEventListener('scroll', function () {
+		if (window.pageYOffset >= 1000) {
+			document.getElementById("upbtn").style.visibility = "visible";
+			document.getElementById("top").style.displsy = "none";
+		} else {
+			document.getElementById("upbtn").style.visibility = "hidden";
+		}
+	})
 	class dataScroll {
 		// 声明获取名字的节点
 		districtName = document.querySelectorAll('.container .districtName')
@@ -258,5 +328,6 @@
 	}
 	new dataScroll() //初始化节点和监听滚动
 </script>
+
 
 </html>
