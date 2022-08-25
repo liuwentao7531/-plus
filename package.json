@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "template_js": "^2.4.0",
+    "vue3-infinite-list": "^0.2.5"
+  }
+}
